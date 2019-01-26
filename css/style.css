@@ -720,7 +720,7 @@ div#preloader {
 ----------------------------------------*/
 
 .wellcome-area {
-  background: rgba(248, 248, 248, 0.8) url("../img/background/bg1.jpg");
+  background: rgba(248, 248, 248, 0.8);
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -732,7 +732,7 @@ div#preloader {
 }
 
 .wellcome-text {
-  margin: 70px 0;
+  margin: 10px 0;
   padding: 30px 40px;
 }
 
