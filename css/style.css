@@ -2343,7 +2343,12 @@ span.email-notes {
 
 .image-with-border {
   border: 3px solid #acf;
-  margin: 10;
+  padding: 10px;
+}
+
+.blue-border {
+  border: 10px solid #aaa;
+  padding: 3%;
 }
 /*----------------------------------------
  .End CSS
