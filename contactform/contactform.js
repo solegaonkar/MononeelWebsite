@@ -100,7 +100,7 @@ jQuery(document).ready(function($) {
     else var str = $(this).serialize();
     var action = $(this).attr('action');
     if( ! action ) {
-      action = 'contact.php';
+      action = 'https://api.candidclicks.net/new';
     }
     $.ajax({
       type: "POST",
