@@ -104,6 +104,7 @@ jQuery(document).ready(function($) {
     }
     $.ajax({
       type: "POST",
+      crossDomail: true,
       url: action,
       data: str,
       success: function(msg) {
