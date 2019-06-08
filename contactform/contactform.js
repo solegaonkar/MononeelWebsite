@@ -106,6 +106,7 @@ jQuery(document).ready(function($) {
       type: "POST",
       crossDomail: true,
       url: action,
+      contentType: "application/json",
       data: str,
       success: function(msg) {
         if (msg == 'OK') {
