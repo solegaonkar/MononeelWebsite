@@ -107,7 +107,7 @@ jQuery(document).ready(function($) {
       crossDomail: true,
       url: action,
       contentType: "application/json",
-      //data: str,
+      data: str,
       success: function(msg) {
         if (msg == 'OK') {
           $("#sendmessage").addClass("show");
