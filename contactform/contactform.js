@@ -113,14 +113,14 @@ jQuery(document).ready(function($) {
       data: JSON.stringify(object),
       success: function(msg) {
         alert(JSON.stringify(msg));
-        if (msg == 'OK') {
+        if (msg.body == '"OK"') {
           $("#sendmessage").addClass("show");
           $("#errormessage").removeClass("show");
           $('.contactForm').find("input, textarea").val("");
         } else {
           $("#sendmessage").removeClass("show");
           $("#errormessage").addClass("show");
-          $('#errormessage').html(msg);
+          $('#errormessage').html("We appologise that there was a problem submitting your information. Request you to call us instead.");
         }
       }
     });
