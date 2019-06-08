@@ -112,7 +112,7 @@ jQuery(document).ready(function($) {
       contentType: "application/json",
       data: JSON.stringify(object),
       success: function(msg) {
-        alert(msg);
+        alert(JSON.stringify(msg));
         if (msg == 'OK') {
           $("#sendmessage").addClass("show");
           $("#errormessage").removeClass("show");
