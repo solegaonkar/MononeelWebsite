@@ -122,6 +122,7 @@ jQuery(document).ready(function($) {
           $("#errormessage").addClass("show");
           $('#errormessage').html("We appologise that there was a problem submitting your information. Request you to call us instead.");
         }
+        grecaptcha.reset();
       }
     });
     return false;
