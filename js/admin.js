@@ -9,13 +9,15 @@ function getEnquiryRow(object) {
         + '</div><div class="col-sm-4">Email: '
         + enquiry.email
         + '</div><div class="col-sm-12">&nbsp;</div><div class="col-sm-12">Message: '
-        + enquiry.message
+        + enquiry.message.replace(/\n/g, "<br/>");
         + '</div></div>';
 
 }
 
 function getEnquiryContainer(object) {
     var h = '<div class="container">';
+    items = object.Items;
+    items.sort((a, b) => (b.timestamp > a.timestamp) ? 1 : -1)
     for (i=0; i<object.Items.length; i++) {
         h += getEnquiryRow(object.Items[i]);
         h += '<div class="row"></div>';
