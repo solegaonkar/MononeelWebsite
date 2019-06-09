@@ -1,7 +1,21 @@
+function closeEnquiry(id) {
+ $.ajax({
+    type: "POST",
+    crossDomail: true,
+    url: "https://api.candidclicks.net/close",
+    contentType: "application/json",
+    data: '{"cred":"password", "id":"' + id + '"}',
+    success: function(object) {
+        $("#data").html(getEnquiryContainer(JSON.parse(object.body)));
+    }
+  });
+}
+
 function getEnquiryRow(object) {
     enquiry = JSON.parse(object.enquiry);
-    return '<hr/><div class="row"><div class="col-sm-12">'
+    return '<hr/><div class="row"><div class="col-sm-10">'
         + object.timestamp
+        + '</div><div class="col-sm-2"><button onclick="closeEnquiry(' + object.id + ')">X</button>'
         + '</div><div class="col-sm-12">&nbsp;</div><div class="col-sm-4">Name: '
         + enquiry.name
         + '</div><div class="col-sm-4">Phone: '
@@ -9,10 +23,10 @@ function getEnquiryRow(object) {
         + '</div><div class="col-sm-4">Email: '
         + enquiry.email
         + '</div><div class="col-sm-12">&nbsp;</div><div class="col-sm-12">Message: '
-        + (enquiry.message ? enquiry.message.replace(/\n/g, "<br/>") : "");
+        + (enquiry.message ? enquiry.message.replace(/\n/g, "<br/>") : "")
         + '</div></div>';
-
 }
+
 
 function getEnquiryContainer(object) {
     var h = '<div class="container">';
