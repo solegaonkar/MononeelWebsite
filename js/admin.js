@@ -36,6 +36,9 @@ function getEnquiryContainer(object) {
         h += getEnquiryRow(object.Items[i]);
         h += '<div class="row"></div>';
     }
+    if (object.Items.length == 0) {
+       h = '<div class="container"><div class="row"><div class="col-xs-12"><h1>All Caught up</h1></div></div></div>';
+    }
     h += '</div>';
     return h;
 }
