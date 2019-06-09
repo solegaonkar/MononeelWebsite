@@ -96,8 +96,9 @@ jQuery(document).ready(function($) {
         i.next('.validation').html((ierror ? (i.attr('data-msg') != undefined ? i.attr('data-msg') : 'wrong Input') : '')).show('blind');
       }
     });
+    if (ferror) return false;
+
     var action = 'https://api.candidclicks.net/new';
-    
     var array = $(this).serializeArray();
     var object = {};
 
