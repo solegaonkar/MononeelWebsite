@@ -15,7 +15,7 @@ function getEnquiryRow(object) {
     enquiry = JSON.parse(object.enquiry);
     return '<hr/><div class="row"><div class="col-sm-10">'
         + object.timestamp
-        + '</div><div class="col-sm-2"><button onclick="closeEnquiry(' + object.id + ')">X</button>'
+        + '</div><div class="col-sm-2"><button onclick="closeEnquiry(\'' + object.id + '\')">X</button>'
         + '</div><div class="col-sm-12">&nbsp;</div><div class="col-sm-4">Name: '
         + enquiry.name
         + '</div><div class="col-sm-4">Phone: '
