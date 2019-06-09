@@ -9,7 +9,7 @@ function getEnquiryRow(object) {
         + '</div><div class="col-sm-4">Email: '
         + enquiry.email
         + '</div><div class="col-sm-12">&nbsp;</div><div class="col-sm-12">Message: '
-        + enquiry.message.replace(/\n/g, "<br/>");
+        + (enquiry.message ? enquiry.message.replace(/\n/g, "<br/>") : "");
         + '</div></div>';
 
 }
