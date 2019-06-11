@@ -85,7 +85,7 @@ var data = {
         });
     } else {
                 alert("Cognito User is NULL");
-        window.location.replace("https://login.candidclicks.net/login?response_type=code&client_id=27dn7msgi3bcp74chumq7kg5m4&redirect_uri=https://candidclicks.net/admin.html");
+        //window.location.replace("https://login.candidclicks.net/login?response_type=code&client_id=27dn7msgi3bcp74chumq7kg5m4&redirect_uri=https://candidclicks.net/admin.html");
 
     }
 
