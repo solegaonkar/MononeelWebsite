@@ -43,6 +43,7 @@ function getEnquiryContainer(object) {
     return h;
 }
 
+alert((location.search.split('access_token=')[1] || '').split('&')[0])
 var data = {
         UserPoolId : 'us-east-1_DcZHCaO1F',
         ClientId : '27dn7msgi3bcp74chumq7kg5m4'
