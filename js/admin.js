@@ -43,7 +43,32 @@ function getEnquiryContainer(object) {
     return h;
 }
 
-$.ajax({
+var data = {
+        UserPoolId : 'us-east-1_DcZHCaO1F',
+        ClientId : '27dn7msgi3bcp74chumq7kg5m4'
+    };
+    var userPool = new AmazonCognitoIdentity.CognitoUserPool(data);
+    var cognitoUser = userPool.getCurrentUser();
+
+    if (cognitoUser != null) {
+        cognitoUser.getSession(function(err, session) {
+            if (err) {
+               alert(err);
+                return;
+            }
+            console.log('session validity: ' + session.isValid());
+
+            AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+                IdentityPoolId : 'us-east-1:63105d6c-892a-4129-a621-b1cb0d03dc8b',
+                Logins : {
+                    // Change the key below according to the specific region your user pool is in.
+                    'cognito-idp.us-east-1.amazonaws.com/us-east-1_DcZHCaO1F' : session.getIdToken().getJwtToken()
+                }
+            });
+
+         
+         
+         $.ajax({
     type: "POST",
     crossDomail: true,
     url: "https://api.candidclicks.net/view",
@@ -53,3 +78,14 @@ $.ajax({
         $("#data").html(getEnquiryContainer(JSON.parse(object.body)));
     }
   });
+
+         
+         
+
+        });
+    } else {
+                alert("Cognito User is NULL");
+        window.location.replace("https://login.candidclicks.net/login?response_type=code&client_id=27dn7msgi3bcp74chumq7kg5m4&redirect_uri=https://candidclicks.net/admin.html");
+
+    }
+
