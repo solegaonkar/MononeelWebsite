@@ -1,0 +1,12 @@
+body {
+    font-family: 'Adamina', sans-serif !important; 
+    color: #400;
+    background: #ffe;
+}
+h1 {
+    font-family: 'Adamina', sans-serif !important; 
+    color: #700;
+}
+.red-border {
+    border: 2px solid #a55; border-radius: 10px; padding: 20px;
+}
