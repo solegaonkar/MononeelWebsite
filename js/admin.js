@@ -74,6 +74,10 @@ $("#data").hide();
 $("#login").show();
 
 function login() {
+    if ($("#name").val() === "" || $("#password").val() === "") {
+        alert("Please enter a valid User Name & Password");
+        return;
+    }
     $("#login").hide();
     $("#data").show();
     $("#data").html('<div class="container"><div class="row"><div class="col-xs-12"><h1>Loading...</h1></div></div></div>');
@@ -105,3 +109,18 @@ function login() {
         }
     });
 }
+
+
+$("#name").keyup(function(e) {
+    if (e.keyCode == 13) {
+        e.preventDefault();
+        login();
+    }
+});
+
+$("#password").keyup(function(e) {
+    if (e.keyCode == 13) {
+        e.preventDefault();
+        login();
+    }
+});
