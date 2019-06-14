@@ -106,6 +106,7 @@ jQuery(document).ready(function($) {
         object[n['name']] = n['value'];
     });
     
+    $('html, body').css("cursor", "wait");
     $.ajax({
       type: "POST",
       crossDomail: true,
@@ -123,6 +124,10 @@ jQuery(document).ready(function($) {
           $('#errormessage').html("We appologise that there was a problem submitting your information. Request you to call us instead.");
         }
         grecaptcha.reset();
+        $('html, body').css("cursor", "auto");
+      },
+      error: function (){
+        $('html, body').css("cursor", "auto");
       }
     });
     return false;
