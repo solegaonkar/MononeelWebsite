@@ -98,7 +98,7 @@ jQuery(document).ready(function($) {
     });
     if (ferror) return false;
 
-    var action = 'https://api.candidclicks.net/new';
+    var action = 'https://api.mononeel.com/new';
     var array = $(this).serializeArray();
     var object = {};
 
