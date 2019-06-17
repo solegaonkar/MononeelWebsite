@@ -74,7 +74,7 @@ function loadData() {
     $.ajax({
         type: "POST",
         crossDomail: true,
-        url: "https://api.candidclicks.net/view",
+        url: "https://api.mononeel.com/view",
         contentType: "application/json",
         data: JSON.stringify(ajaxRequestData),
         success: function(object) {
@@ -100,7 +100,7 @@ function closeEnquiry(i) {
     $.ajax({
         type: "POST",
         crossDomail: true,
-        url: "https://api.candidclicks.net/close",
+        url: "https://api.mononeel.com/close",
         contentType: "application/json",
         data: JSON.stringify(ajaxRequestData),
         success: function(object) {
@@ -122,7 +122,7 @@ function updateEnquiry(i) {
     $.ajax({
         type: "POST",
         crossDomail: true,
-        url: "https://api.candidclicks.net/update",
+        url: "https://api.mononeel.com/update",
         contentType: "application/json",
         data: JSON.stringify(ajaxRequestData),
         success: function(object) {
@@ -151,8 +151,8 @@ function login() {
         Password : $("#password").val()
     };
     var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
-    var poolData = { UserPoolId : 'us-east-1_DcZHCaO1F',
-        ClientId : '27dn7msgi3bcp74chumq7kg5m4'
+    var poolData = { UserPoolId : 'ap-south-1_yBJo9e7Ir',
+        ClientId : '1bmhvcs9a903n3h25qjcgmdiq3'
     };
     var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
     var userData = {
